@@ -1,5 +1,5 @@
-Funcion caracter
-	Escribir "La letra asignada es: ", letra
+Funcion caracter(L)
+	Escribir "La letra asignada es: ", L
 FinFuncion
 
 
@@ -8,5 +8,5 @@ Algoritmo mostrar_letra
 	letra <- "R" 
 	
 	
-	caracter() 
+	caracter(letra) 
 FinAlgoritmo
