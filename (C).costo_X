@@ -1,0 +1,13 @@
+Funcion modulo(p)
+	Escribir "El precio  de arroz es: ", p;
+FinFuncion
+
+
+Algoritmo costo_X
+	Definir precio Como Real;
+	
+	precio <- 3.99
+	
+	p <- 3.99
+	modulo(p)
+FinAlgoritmo

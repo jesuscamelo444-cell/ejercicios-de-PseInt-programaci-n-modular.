@@ -1,0 +1,14 @@
+Funcion  modulo(parametro)
+    Escribir "Bienvenido señor ", parametro
+FinFuncion
+
+
+Algoritmo principal
+    Definir Jesus, Camelo Como Caracter;
+    
+    Jesus <- "Jesus"
+    Camelo <- "Camelo"
+    
+    parametro <- Jesus + " " + Camelo
+    modulo(parametro)
+FinAlgoritmo

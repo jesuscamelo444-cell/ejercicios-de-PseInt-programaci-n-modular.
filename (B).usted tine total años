@@ -1,0 +1,12 @@
+Funcion años(e)
+	Escribir "tienes: ", e,"años"
+FinFuncion
+
+Algoritmo  cauntos_años_tines
+	Definir edad Como Entero
+	
+	edad <- 17
+	e <- 17
+	
+	años(e)
+FinAlgoritmo
