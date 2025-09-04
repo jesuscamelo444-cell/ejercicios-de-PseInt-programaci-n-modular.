@@ -1,0 +1,12 @@
+Funcion caracter
+	Escribir "La letra asignada es: ", letra
+FinFuncion
+
+
+Algoritmo mostrar_letra
+	Definir letra Como Caracter;
+	letra <- "R" 
+	
+	
+	caracter() 
+FinAlgoritmo
