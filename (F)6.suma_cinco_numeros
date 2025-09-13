@@ -1,0 +1,37 @@
+Funcion suma <- tomar_suma
+	Definir num1, num2, num3, num4, num5 Como Real;
+	Definir suma Como Real;
+	
+	Escribir "Ingrse el primer numero: ";
+	Leer num1;
+	Escribir "Ingrse el segundo numero: ";
+	Leer num2;
+	Escribir "Ingrse el tercer numero: ";
+	Leer num3;
+	Escribir "Ingrese el cuarto numero: ";
+	Leer num4;
+	Escribir "Ingrse el quinto nu mero: ";
+	Leer num5;
+	
+	suma <- num1 + num2 + num3 + num4 + num5 
+FinFuncion 
+
+// Funcion que muestra el mensaje
+Funcion mensaje <- mostrar_total(suma)
+	Definir mensaje como cadena;
+	mensaje <- "La suma de los cinco numeros es: " + ConvertirATexto(suma)
+FinFuncion
+
+// fumcion que lee el mensaje
+Funcion imprimir_total(mensaje)
+	Escribir mensaje
+FinFuncion
+
+Algoritmo suma_cinco_numeros
+	Definir resultado Como Real;
+	Definir mensaje como cadena;
+	
+	resultado <- tomar_suma()
+	mensaje <- mostrar_total(resultado)
+	imprimir_total(mensaje)
+FinAlgoritmo
