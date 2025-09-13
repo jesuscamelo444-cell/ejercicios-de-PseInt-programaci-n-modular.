@@ -1,0 +1,37 @@
+Funcion edad <- calcularEdad(añoActual, nacimiento)
+	edad <-  añoActual - nacimiento;
+FinFuncion
+
+Funcion valor <- pedirdato(texto)
+	Definir valor Como entero
+	Escribir texto;
+	Leer valor;
+FinFuncion
+
+SubProceso mostarEdad(numeroPersona, edad)
+	Escribir "Edad  persona " numeroPersona ": ", edad
+FinSubProceso
+
+
+Algoritmo calcular_Edades
+	Definir añoActual, nac1, nac2, nac3 Como Entero;
+    Definir edad1, edad2, edad3 Como Entero;
+	
+	// pedir datos al usuario con la funcion pedir dato
+	añoActual <- pedirdato ("Ingrese el año actual: ");
+	nac1 <- pedirdato ("ingrese la fecha de nacimiento persona 1:");
+	nac2 <- pedirdato ("Ingrese la fecha de nacimiento de la persona 2:");
+	nac3 <- pedirdato ("Ingrese la feha de nacimiento de la persona 3:")
+	
+	// calcular la edad de las personas con la funcion  calcularEdad
+	
+	edad1 <- calcularEdad (añoActual, nac1);
+	edad2 <- calcularEdad (añoActual, nac2);
+	edad3 <- calcularEdad (añoActual, nac3);
+	
+	// mostrar resultados cin la Funcion  edad
+	mostarEdad(1, edad1);
+	mostarEdad(2, edad2);
+	mostarEdad(3, edad3);
+	
+FinAlgoritmo
