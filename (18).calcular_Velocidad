@@ -1,0 +1,30 @@
+Funcion velocidad <- calcularVelocidad(distancia, tiempo)
+	velocidad <- (distancia / tiempo);
+FinFuncion
+
+Funcion valor <- pedirDato(texto)
+	Definir valor como real;
+	Escribir texto;
+	Leer valor;
+FinFuncion
+
+SubProceso mostrarVelocidad(velocidad)
+	Escribir "La velocidad promedio es de: ", velocidad, " Km/h";
+FinSubProceso
+
+
+Algoritmo calcular_Velocidad
+	// Definir tipo de varibles
+	Definir distancia, tiempo, velocidad, velocidadPromedio Como Real;
+	
+	// pedir datos con la Funcion pedirDato
+	distancia <- pedirDato("Ingrese la distancia Km: ");
+	tiempo <- pedirDato ("Ingrese el tiempo h: ");
+	
+	// calcular la velocidad con la Funcion calcularVelocidad
+	velocidadPromedio <-  calcularVelocidad(distancia, tiempo)
+	
+	// mostar resultados con la Funcion mostrarVelocidad
+	mostrarVelocidad(velocidadPromedio)
+	
+FinAlgoritmo

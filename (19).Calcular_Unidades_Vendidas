@@ -1,0 +1,38 @@
+Funcion total <- calcularTotal(producto1, producto2, producto3, precio1, precio2, precio3)
+	total <- (precio1 * producto1) + (precio2 * producto2) + (precio3 * producto3)
+
+FinFuncion
+
+Funcion valor <- pedirProducto(texto)
+	Definir valor Como real;
+	Escribir texto;
+	Leer valor;
+FinFuncion
+
+SubProceso mostrarUnidadesVendidas(total)
+	Escribir "El precio total de la compra es: " total;
+FinSubProceso
+
+
+Algoritmo Calcular_Unidades_Vendidas
+	//Definir tipo de varibles
+	Definir total, producto1, producto2, producto3 Como Entero;
+	Definir precio1,precio2, precio3 como real;
+	Definir total Como Real;
+	
+	// pedir cantidad de productos vendidos con la varible pedirProducto}
+	producto1 <- pedirProducto("Ingrese la cantidad del primer producto: ");
+	producto2 <- pedirProducto("Ingrese la cantidad del segundo producto: ");
+	producto3 <- pedirProducto("Ingrese la cantidad del tercer producto: ");
+	
+	// pedir precio al usuario con la Funcion  pedirProducto
+	precio1 <- pedirProducto("Ingrese el precio del  primer producto: ");
+	precio2 <- pedirProducto("Ingrese el precio del segundo producto: ");
+	precio3 <-pedirProducto("Ingrese el precio del tercer porducto: ");
+	
+	//  calcular el precio total de los productos con la Funcion  calcularTotal
+	total <- calcularTotal(producto1, producto2, producto3, precio1, precio2, precio3)
+	
+	// mostrar el resultado con la Funcion  mostrarUnidadesVendidas
+	mostrarUnidadesVendidas(total)
+FinAlgoritmo
