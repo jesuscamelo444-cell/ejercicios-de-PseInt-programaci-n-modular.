@@ -1,0 +1,32 @@
+Funcion costo <- CalcularCosto(NumeroPagainas, precioPagina)
+	Definir costo Como Real;
+	
+	costo <- Numeropagainas * precioPagina
+FinFuncion
+
+Funcion valor <- pedirDatos(texto)
+	Definir  valor Como Real;
+	Escribir texto;
+	Leer valor;
+FinFuncion
+
+SubProceso mostrarCostoImprecion(Numeropagainas, costo)
+	Escribir "El numero de paginas inprimidad es de: ", Numeropagainas;
+	Escribir "el costo de impresion es de:  ", costo;
+FinSubProceso
+
+Algoritmo Calcular_costo_Imprecion
+	// Definir tipo de varibles
+	Definir Numeropagainas como entero;
+	Definir costoImprecion Como Real;
+	
+	// pedir datos al apersona con la Funcion pedirDatos
+	Numeropagainas <- pedirDatos("Ingrese el número de páginas: ");
+	precioPagina <- pedirDatos("Ingrese el costo de impreción por pagina: ");
+	
+	//calcular el costo de imprecion con la Funcion CalcularCosto
+	costo <- CalcularCosto(NumeroPagainas, precioPagina)
+	
+	// mostrar resultados con la Funcion  mostrarCostoImprecion
+	mostrarCostoImprecion(NumeroPagainas, costo)
+FinAlgoritmo
