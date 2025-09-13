@@ -1,0 +1,22 @@
+Funcion dato_caracter <- tomar_caracter
+	Definir dato_caracter Como Caracter;
+	dato_caracter <- "R"
+FinFuncion
+
+Funcion mensaje <- mostrar_mensaje(letra) 
+	mensaje <- "La letra asignada es: " + letra
+FinFuncion
+
+SubProceso imprimir_mensaje(mensaje)
+	Escribir mensaje
+FinSubProceso
+
+Algoritmo valor_de_letra_asignada_X
+	Definir letra Como Caracter;
+	Definir mensaje Como Cadena;
+	
+	letra <- tomar_caracter()
+	mensaje <- mostrar_mensaje(letra)
+	imprimir_mensaje(mensaje)
+FinAlgoritmo
+

@@ -1,0 +1,22 @@
+Funcion dato_edad <- tomar_edad
+	Definir dato_edad Como Entero;
+	dato_edad <- 17
+FinFuncion
+
+Funcion mensaje <- mostrar_mensaje(Edad)
+	mensaje <- "tines la edad de: " + ConvertirATexto(Edad)
+FinFuncion
+
+Funcion imprimir_mensaje(mensaje)
+	Escribir mensaje
+FinFuncion
+
+Algoritmo tines_X_años
+	Definir edad Como Entero;
+	Definir mensaje como caracter;
+	
+	edad <- tomar_edad()
+	mensaje <- mostrar_mensaje(edad)
+	imprimir_mensaje(mensaje)
+	
+FinAlgoritmo
