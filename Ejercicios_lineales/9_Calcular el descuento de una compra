@@ -1,0 +1,33 @@
+Funcion dato_compra <- tomar_compra 
+	// Definir tipo de varibles
+	Definir precio, porcentajeDescuento  Como Real;
+	
+	// tomar datos o asignacion de variables
+	Escribir " digita el precio de la compra";
+	Leer precio
+FinFuncion
+
+Funcion dato_descuento  <- tomar_descuento
+	Escribir " digita el porcentajeDescuento (%) ";
+	Leer porcentajeDescuento
+FinFuncion
+
+Funcion mensaje <- mostrar_mensaje(precio, porcentajeDescuento)
+	// procesar datos
+	descuento <- precio * porcentajeDescuento / 100;
+	precioFinal <- precio - descuento;
+	// Mostrar resultados
+	
+	Escribir "precio : $",precio;
+	Escribir "descuento Aplicado: $",descuento;
+	Escribir "precio final a pagar: $",precioFinal;
+FinFuncion
+
+	Algoritmo calcular_descuento_compra
+		Definir mensaje como cadena;
+		Definir descuento, precioFinal Como Real;
+		
+		precio <- tomar_compra()
+		porcentajeDescuento <- tomar_descuento()
+		mensaje <- mostrar_mensaje(precio,porcentajeDescuento)
+FinAlgoritmo

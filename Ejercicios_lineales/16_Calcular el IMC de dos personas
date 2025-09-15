@@ -1,0 +1,33 @@
+Funcion imc <- calcular_imc(peso, altura)
+	imc <- peso * (altura * altura)
+FinFuncion
+
+Funcion valor <- pedirDato(texto)
+	Definir valor como real;
+	Escribir texto
+	Leer valor;
+FinFuncion
+
+SubProceso mostrarIMC(numeroPersona, imc)
+	Escribir  "El IMC de la persona " numeroPersona "es de: ", imc
+FinSubProceso
+
+Algoritmo calcular_imc_dos_personas
+	Definir peso1, altura1, persona1 Como Real
+	Definir  peso2, altura2, persona2 Como Real;
+	
+	// pedir datos de la persona en la Funcion pedirDato
+	peso1 <- pedirDato("Ingrse su peso persona 1 (Kg):");
+	altura1 <- pedirDato("Ingrse su altura persona 1 (m):");
+	peso2 <- pedirDato("Ingrse su peso persona 2 (Kg):");
+	altura2 <- pedirDato("Ingrse su altura persona 2 (m):");
+	
+	// calcular IMC en la Funcion  calcular_imc
+	persona1 <- calcular_imc(peso1, altura1);
+	persona2 <- calcular_imc(peso2, altura2);
+	
+	// Mostrar  resultados con la Funcion IMC
+	mostrarIMC(1, persona1)
+	mostrarIMC(2, persona2)
+	
+FinAlgoritmo

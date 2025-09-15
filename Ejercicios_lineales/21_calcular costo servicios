@@ -1,0 +1,44 @@
+Funcion totalPagar <- CalcularServicios(Agua, Luz, precioAgua, precioLuz)
+    Definir totalPagar Como Real;
+	
+    // calcular total general usando los consumos y precios pasados
+    totalPagar <- (Agua * precioAgua) + (Luz * precioLuz)
+FinFuncion
+
+Funcion valor <- pediConsumo(texto)
+    Definir valor Como Real
+    Escribir texto
+    Leer valor
+FinFuncion
+
+SubProceso MostrarResultados(totalPagar, totalAgua, totalLuz)
+    Escribir "-----------------------------------"
+    Escribir "Total Agua: $", totalAgua;
+    Escribir "Total Luz: $", totalLuz;
+    Escribir "-----------------------------------"
+    Escribir "TOTAL A PAGAR POR SERVICIOS: $", totalPagar;
+FinSubProceso
+
+Algoritmo calcular_costo_servicios
+    Definir Agua, Luz Como Real;
+    Definir totalAgua, totalLuz, totalPagar Como Real;
+    Definir precioAgua, precioLuz Como Real;
+	
+    // precios fijos
+    precioAgua <- 1500;
+    precioLuz  <- 600;
+	
+    // pedir consumos
+    Agua <- pediConsumo("Ingrese el consumo de Agua (m3): ");
+    Luz  <- pediConsumo("Ingrese el consumo de Luz (kWh): ");
+	
+    // calcular subtotales 
+    totalAgua <- (Agua * precioAgua);
+    totalLuz  <- (Luz * precioLuz);
+	
+    // calculalar el total con la Funcion CalcularServicios
+    totalPagar <- CalcularServicios(Agua, Luz, precioAgua, precioLuz);
+	
+    // mostrar resultados con la Funcion MostrarResultados
+    MostrarResultados(totalPagar, totalAgua, totalLuz);
+FinAlgoritmo

@@ -1,0 +1,33 @@
+Funcion  dato_celsius <- tomar_grados_celsius
+	// 1 Definir tipos de variables
+	Definir celsius Como Real;
+	
+	celsius <- 100;
+	dato_celsius <- celsius;
+	
+FinFuncion
+
+Funcion grados_Fahrenheit <- tomar_fahrenheit(celsius)
+	// Definir tipo de varibles
+	Definir fahrenheit Como Real;
+	
+	// conversión
+	Escribir "cuanto son 100° secius en fahrenheit :";
+	fahrenheit <- (celsius * 9/5 ) + 32;
+	grados_Fahrenheit <- fahrenheit;
+FinFuncion
+
+Funcion imprimir_mensaje(celsius, fahrenheit)
+	// 4 Mostrar resultados
+	Escribir Celsius, "°C equivalen a: ", fahrenheit, "°F";
+FinFuncion
+
+Algoritmo convertir_grados_celsius_fahrenheit
+	Definir celsius, fahrenheit Como Real;
+	
+	celsius <- tomar_grados_celsius();
+	fahrenheit <- tomar_fahrenheit(celsius);
+	
+	imprimir_mensaje(celsius,fahrenheit);
+	
+FinAlgoritmo
