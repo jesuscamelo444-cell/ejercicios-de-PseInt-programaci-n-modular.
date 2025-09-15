@@ -1,0 +1,54 @@
+Funcion valor <- tomarDatos(texto)
+	Definir valor Como caracter;
+	Escribir texto;
+	Leer valor;
+FinFuncion
+
+Funcion resultado <- tomarResultado(texto)
+	Definir resultado Como caracter;
+	Escribir texto;
+	Leer resultado;
+FinFuncion
+
+SubProceso AsisgnacionPuntos(resultado, puntos1 Por Referencia, puntos2 Por Referencia)
+	
+	segun resultado Hacer
+		"ganado":
+			puntos1 <- puntos1 + 3;
+			puntos2 <- puntos2 + 0;
+		"empate" :
+			puntos1 <- puntos1 + 1;
+			puntos2 <- puntos2 + 1;
+		"perdido" :
+			puntos1 <- puntos1 + 0;
+			puntos2 <- puntos2 + 3;
+		De Otro Modo:
+			Escribir "resultado invalido";
+			
+	FinSegun
+	
+	// Mostrar resultado
+	Escribir" __________CLASIFICACIÓN__________";
+	Escribir "Equipo 1: ",puntos1, " puntos";
+	Escribir "Equipo 2: ",puntos2," puntos";
+FinAlgoritmo
+FinSubProceso
+
+Algoritmo Clasificación_futbol
+	
+	// Definir tipo de varibles
+	Definir equipo1, equipo2 como cadena;
+	Definir puntos1, puntos2 Como Entero;
+	Definir resultado como cadena;
+	
+	puntos1 <- 0;
+	puntos2 <- 0;
+	
+	// tomamos datos con  la funcion tomarDatos
+	
+	equipo1 <- tomarDatos("Ingrese el nombre del primer equipo: ");
+	equipo2 <- tomarDatos("Ingrese el nombre del segundo equipo: ");
+	resultado <- tomarResultado("Ingrse el resultado del partido 1 (ganado; empate, perdido): ");
+	
+	AsisgnacionPuntos(resultado, puntos1, puntos2);
+FinAlgoritmo

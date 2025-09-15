@@ -1,0 +1,67 @@
+Funcion valor <- pedirCantidad(texto)
+	Definir valor Como Entero;
+	Escribir texto;
+	Leer valor;
+FinFuncion
+
+Funcion texto <- pedirTexto(mensaje)
+	Definir texto Como Caracter;
+	Escribir mensaje;
+	Leer texto;
+FinFuncion
+
+Funcion precioFinal <- calcularPrecio(tipo, cantidad)
+	Definir precio_base, precio_unitario, descuento, precioFinal Como Real;
+	
+	Segun tipo Hacer
+		"alimentos":
+			precio_base <- 10000;
+			precio_unitario <- cantidad * precio_base;
+			descuento <- precio_unitario * 0.10;
+			
+		"vestimenta":
+			precio_base <- 50000;
+			precio_unitario <- cantidad * precio_base;
+			descuento <- precio_unitario * 0.05;
+			
+		"electricos":
+			precio_base <- 1000000;
+			precio_unitario <- cantidad * precio_base;
+			descuento <- 0;
+			
+		De Otro Modo:
+			precio_base <- 0;
+			precio_unitario <- 0;
+			descuento <- 0;
+	FinSegun
+	
+	precioFinal <- precio_unitario - descuento;
+FinFuncion
+
+Algoritmo Tienda_productos
+	Definir nombre, tipo Como Caracter;
+	Definir cantidad Como Entero;
+	Definir precioFinal Como Real;
+	
+	// 1. Tomar datos
+	nombre <- pedirTexto("Ingrese el nombre del producto: ");
+	tipo <- pedirTexto("¿Qué tipo de producto desea comprar (alimentos, vestimenta, electricos)?: ");
+	cantidad <- pedirCantidad("Ingrese la cantidad de unidades: ");
+	
+	// 2. Validar cantidad
+	Si cantidad <= 0 Entonces
+		Escribir "La cantidad debe ser mayor a 0";
+	FinSi
+	
+// 3. Calcular precio
+precioFinal <- calcularPrecio(tipo, cantidad);
+
+// 4. Mostrar resultados
+Escribir "-------------------------------------";
+Escribir "Nombre del producto: ", nombre;
+Escribir "Tipo de producto: ", tipo;
+Escribir "Cantidad comprada: ", cantidad;
+Escribir "Precio final con descuento: ", precioFinal;
+Escribir "-------------------------------------";
+
+FinAlgoritmo

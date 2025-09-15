@@ -1,0 +1,42 @@
+Funcion valor <- pedirDatos(texto)
+	Definir valor Como Real;
+	Escribir texto;
+	Leer valor;
+FinFuncion
+
+Funcion imc <- calcularIMC(peso, altura)
+	Definir imc Como Real;
+	imc <- peso / (altura^2);
+FinFuncion
+
+SubProceso mostrarClasificacion(imc)
+	Escribir "Su índice de masa corporal es: ", imc;
+	
+	Si imc < 18.5 Entonces
+		Escribir "Clasificación: Bajo peso";
+	SiNo
+		Si imc >= 18.5 Y imc < 25 Entonces
+			Escribir "Clasificación: Normal";
+		SiNo
+			Si imc >= 25 Y imc <= 29.9 Entonces
+				Escribir "Clasificación: Sobrepeso";
+			SiNo
+				Escribir "Clasificación: Obesidad";
+			FinSi
+		FinSi
+	FinSi
+FinSubProceso
+
+Algoritmo calcular_el_imc
+	Definir peso, altura, imc Como Real;
+	
+	peso <- pedirDatos("Ingrese su peso en kg: ");
+	altura <- pedirDatos("Ingrese su altura en metros: ");
+	
+	Si peso <= 0 O altura <= 0 Entonces
+		Escribir "Error: los valores ingresados deben ser mayores a 0";
+	SiNo
+		imc <- calcularIMC(peso, altura);
+		mostrarClasificacion(imc);
+	FinSi
+FinAlgoritmo

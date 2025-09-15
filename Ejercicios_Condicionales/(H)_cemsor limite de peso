@@ -1,0 +1,36 @@
+Funcion valor <- pedirDatos(texto)
+	Definir valor Como Real;
+	Escribir texto;
+	Leer valor;
+FinFuncion
+
+Funcion procesarDatos(peso, limitePeso)
+	Definir piso_deseado Como Entero;
+	
+	si peso > limitePeso Entonces;
+		
+		Escribir "Error limite de peso alcanzado";
+	SiNo
+		Escribir "Oprima el boton 1,2,3,4,5";
+		Leer piso_deseado;
+		si piso_deseado >=1 y piso_deseado <=5 Entonces;
+			Escribir "Acensor en movimiento: ", piso_deseado;
+		SiNo
+			Escribir "Error piso no existente: ", piso_deseado, " X..."
+		FinSi
+	FinSi
+	
+FinFuncion
+
+
+
+Algoritmo Acensor_Limite_Peso
+	Definir peso, limitePeso Como Real;
+
+	
+	limitePeso <- 150;
+	peso <- pedirDatos("Ingrese su peso kg: ");
+	
+	// procesar datos y mostrar resultasdos con la funcion procesarDatos
+	procesarDatos(peso, limitePeso);
+FinAlgoritmo

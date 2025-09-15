@@ -1,0 +1,37 @@
+Funcion valor <- pedirPiso(texto)
+	Definir valor Como Entero;
+	Escribir texto;
+	Leer valor;
+FinFuncion
+
+Funcion numero_piso <- moverPiso(piso)
+	Definir numero_piso Como Caracter;
+	
+	Segun piso Hacer
+		Caso 1:
+			numero_piso<- "1";
+			Escribir "Estamos llegando al piso 1"; 
+		Caso 2:
+			numero_piso<- "2";
+			Escribir "Estamos llegando al piso 2";
+		Caso 3:
+			numero_piso<- "3";
+			Escribir "Estamos llegando al piso 3";
+		Caso 4:
+			numero_piso<- "4";
+			Escribir "Estamos llegando al piso 4";
+		De Otro Modo:
+			numero_piso<- "error";
+			Escribir "Error: no existe ese piso";
+	FinSegun
+FinFuncion
+
+Algoritmo acensor_piso_deseado
+	Definir piso Como Entero;
+	Definir numero_piso Como Caracter;
+	
+	piso <- pedirPiso("Oprima el boton del piso que desea ir: ");
+	numero_piso <- moverPiso(piso);
+	
+	Escribir " ", numero_piso;
+FinAlgoritmo

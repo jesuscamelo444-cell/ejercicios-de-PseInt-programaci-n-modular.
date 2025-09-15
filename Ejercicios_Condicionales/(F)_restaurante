@@ -1,0 +1,40 @@
+Funcion valor <- pedirDatos(texto)
+	Definir valor Como Real;
+	Escribir texto;
+	Leer valor;
+FinFuncion
+
+Funcion subtotal <- calcularSubtotal(plato, bebidas)
+	subtotal <- plato + bebidas;
+FinFuncion
+
+Funcion descuento <- calcularDescuento(subtotal)
+	Definir descuento Como Real;
+	Si subtotal <= 100 Entonces
+		descuento <- subtotal * 0.10; // 10% de descuento
+	SiNo
+		descuento <- 0;
+	FinSi
+FinFuncion
+
+SubProceso mostrarResultados(subtotal, descuento)
+	Escribir "Subtotal $: ", subtotal;
+	Escribir "Descuento aplicado $: ", descuento;
+	Escribir "Total a pagar $: ", subtotal - descuento;
+FinSubProceso
+
+Algoritmo restaurante
+	// Definir variables
+	Definir plato, bebidas, subtotal, descuento Como Real;
+	
+	// Pedir datos
+	plato <- pedirDatos("Ingrese el costo del plato seleccionado: ");
+	bebidas <- pedirDatos("Ingrese el costo de la bebida seleccionada: ");
+	
+	// Calcular subtotal y descuento
+	subtotal <- calcularSubtotal(plato, bebidas);
+	descuento <- calcularDescuento(subtotal);
+	
+	// Mostrar resultados
+	mostrarResultados(subtotal, descuento);
+FinAlgoritmo
