@@ -1,0 +1,46 @@
+Funcion valor <- pedirNumero(texto)
+	Definir valor Como Entero;
+	Escribir texto;
+	Leer valor;
+FinFuncion
+
+SubProceso jugar(numero_secreto Por Referencia, intentos Por Referencia)
+	Definir intento Como Entero;
+	intentos <- 0;
+	
+	// Primer intento con la Funcion pedirNumero
+	intento <- pedirNumero("Adivina el numero que he pensado entre 1 y 100: ");
+	intentos <- intentos + 1;
+	
+	// Bucle hasta adivinar
+	Mientras intento <> numero_secreto Hacer
+		Si intento < numero_secreto Entonces
+			// dar pistas al usuario
+			Escribir "El numero secreto es mayor.";
+		SiNo
+			Escribir "El numero secreto es menor.";
+		FinSi
+		// dar al usuario un nuevo intento si no lo adivino
+		intento <- pedirNumero("Intente de nuevo: ");
+		intentos <- intentos + 1;
+	FinMientras
+FinSubProceso
+
+SubProceso mostrarResultado(numero_secreto, intentos)
+	Escribir "¡Felicidades! Adivinaste el numero: ", numero_secreto;
+	Escribir "Lo lograste en ", intentos, " intentos.";
+FinSubProceso
+
+Algoritmo adivina_numero
+	Definir numero_secreto, intentos Como Entero;
+	
+	// 1. Generar número secreto
+	numero_secreto <- Aleatorio(1,100);
+	
+	// 2. Jugar hasta adivinar con  la Funcion jugar
+	jugar(numero_secreto, intentos);
+	
+	// 3. Mostrar resultado final con la Funcion  mostrarResultado
+	mostrarResultado(numero_secreto, intentos);
+FinAlgoritmo
+

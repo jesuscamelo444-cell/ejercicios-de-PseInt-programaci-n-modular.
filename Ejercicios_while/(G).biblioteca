@@ -1,0 +1,47 @@
+Funcion valor <- pedirTexto(texto)
+	Definir valor Como Cadena;
+	Escribir texto;
+	Leer valor;
+FinFuncion
+
+Funcion valor <- pedirNumero(texto)
+	Definir valor Como Entero;
+	Escribir texto;
+	Leer valor;
+FinFuncion
+
+SubProceso menu(lista_libros Por Referencia)
+	Definir autor, titulo Como Cadena;
+	Definir numero_paginas, alternativa Como Entero;
+	
+	alternativa <- 1
+	Mientras alternativa = 1 Hacer
+		Escribir "_____BIBLIOTECA_____"
+		
+		autor <- pedirTexto("Ingrese el nombre del autor: ")
+		titulo <- pedirTexto("Ingrese el título del libro: ")
+		numero_paginas <- pedirNumero("Ingrese el número de páginas: ")
+		
+		// Acumular en la lista
+		lista_libros <- lista_libros + "Título: " + titulo + ", Autor: " + autor + ", Páginas: " + ConvertirATexto(numero_paginas) + nl
+		
+		Escribir "¿Desea ingresar otro libro?"
+		Escribir "1. Sí"
+		Escribir "2. No"
+		Leer alternativa
+	FinMientras
+FinSubProceso
+
+SubProceso mostrarResultados(lista_libros)
+	Escribir "__________LISTA DE LIBROS REGISTRADOS__________"
+	Escribir lista_libros
+FinSubProceso
+
+Algoritmo biblioteca 
+	Definir lista_libros Como Cadena;
+	lista_libros <- ""
+	
+	// Llamar procesos
+	menu(lista_libros)
+	mostrarResultados(lista_libros)
+FinAlgoritmo

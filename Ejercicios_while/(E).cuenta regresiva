@@ -1,0 +1,31 @@
+Funcion numero <- pedirNumero
+	Definir numero Como Entero;
+	Escribir Sin Saltar "Ingrese el numero, debe ser entero positivo: ";
+	Leer numero;
+FinFuncion
+
+SubProceso cuentaRegresiva(numero)
+	Mientras numero >= 0 Hacer
+		Escribir numero;
+		numero <- numero - 1;
+	FinMientras
+FinSubProceso
+
+SubProceso mostrarMensaje
+	Escribir "¡Tiempo cumplido!";
+FinSubProceso
+
+
+Algoritmo cuenta_regresiva
+	Definir n Como Entero;
+	
+	// 1 Pedir número
+	n <- pedirNumero();
+	
+	// 2 Hacer cuenta regresiva
+	cuentaRegresiva(n);
+	
+	// 3 Mostrar mensaje final
+	mostrarMensaje();
+FinAlgoritmo
+
